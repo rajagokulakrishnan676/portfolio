@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Raja Gokulakrishnan - Portfolio</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(45deg, #3494e6, #ec6ead);
+    }
+
+    header {
+        background-color: #d8d4d4;
+        color: #fff;
+        padding: 1px;
+        text-align: center;
+    }
+
+    nav ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 20px;
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    section {
+        padding: 20px 0;
+    }
+
+    .container {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 1px 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .content {
+        opacity: 0;
+        animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    nav {
+        display: flex;
+        width: 84%;
+        margin: auto;
+        padding: 10px 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        display: inline-block;
+        list-style: none;
+        margin: 10px 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #000;
+        font-weight: bold;
+    }
+
+    nav ul li a:hover {
+        color: red;
+    }
+
+    span {
+        font-size: 20px;
+    }
+
+    .about-box {
+        background-color: #f7f7f7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .about-box h2 {
+        color: #333;
+    }
+
+    h1 {
+        background: linear-gradient(180deg, yellow, red);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .skills-box {
+        background-color: #f7f7f7;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .skills-box h2 {
+        color: #333;
+    }
+
+    .skills-content {
+        display: flex;
+        justify-content: space-between;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    }
+
+    .skills-content ol {
+        flex: 1;
+        margin-right: 5px;
+    }
+
+    .language {
+        flex: 1;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    }
+
+    .language h2 {
+        color: #333;
+    }
+
+    .projects-box {
+        background-color: #f7f7f7;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .projects-box h2 {
+        color: #333;
+    }
+
+    #modify {
+        position: relative;
+        bottom: 70px;
+    }
+
+    h2 {
+        font-family: 'Times New Roman', Times, serif;
+        background: linear-gradient(180deg,rgb(0, 255, 0),black);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+    }
+
+    .content {
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    #namecolor {
+        color: orange;
+    }
+</style>
+
+<body>
+    <div class="zero">
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="#">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="contact us.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+    </div>
+    <header>
+        <h1>Raja Gokulakrishnan <br> <span>Full Stack Developer</span></h1>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-box">
+                <h2>About Me</h2>
+                <div class="content">
+                    <p>Welcome to my portfolio! I'm <span id="namecolor">Raja Gokulakrishnan </span>and I'm a passionate <span class="highlight">Web
+                            Developer</span> with expertise
+                        in <span class="highlight">HTML</span>, <span class="highlight">CSS</span>, and <span
+                            class="highlight">JavaScript</span>. My journey in the world of web development began...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill">
+        <div class="container">
+            <div class="skills-box">
+                <h2>Skill</h2>
+                <div class="content skills-content">
+                    <ol>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JAVASCRIPT</li>
+                        <li>SQL</li>
+                        <li>PLSQL</li>
+                        <li>GIT & GITHUB</li>
+                        <li>WEB HOSTING</li>
+                        <li>MS EXCEL</li>
+                        <li>PHP</li>
+                        <li>AI TOOLS</li>
+                    </ol>
+                    <div class="language">
+                        <h2 id="modify">Languages</h2>
+                        <ol id="modify">
+                            <li>TAMIL</li>
+                            <li>ENGLISH</li>
+                            <li>TELUGU</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="projects-box">
+                <h2>Projects</h2>
+                <div class="content">
+                    <p>Here are some of the projects I've worked on. Each project showcases my ability to create
+                        innovative
+                        solutions using the latest technologies and to Explore my projects also please visit the project
+                        page
+                        and damn your thoughts on contact us page.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Raja Gokulakrishnan. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

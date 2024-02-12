@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raja Gokulakrishnan - Portfolio</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        
+        body {
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+        }
+
+        nav {
+            display: flex;
+            width: 100%;
+            margin: auto;
+            padding: 20px 0;
+            align-items: center;
+            justify-content: space-between;
+            background-color: transparent;
+            transition: background-color 0.5s ease;
+        }
+
+        nav ul {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #030000;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #ffd166;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px;
+        }
+
+        .project-box {
+            width: 200px;
+            height: 210px;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .project-box:hover {
+            transform: scale(1.05);
+        }
+
+        .project-box img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .project-content {
+            padding: 10px;
+        }
+
+        h3,
+        p {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .button-container {
+            position: absolute;
+            bottom: 2px;
+            /* Adjusted the bottom margin to 2px */
+            width: 100%;
+            text-align: center;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            background-color: #3494e6;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #ec6ead;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        body {
+            animation: fadeIn 1.5s ease;
+        }
+
+        marquee {
+            color: orangered;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.884); 
+            font-size: 24px;    
+            font-family: 'Times New Roman', Times, serif;    
+        }
+
+        footer {
+            background-color: #030000bf;
+            color: #ddd;
+            padding: 3px;
+        }
+
+        h3 {
+            background: linear-gradient(180deg,rgb(0, 255, 242),rgb(255, 149, 0));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; 
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        .main {
+            background: linear-gradient(180deg,blue,red);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        p {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="zero">
+        <nav>
+            <img src="" alt="">
+            <ul>
+                <li><a href="home.html">HOME</a></li>
+                <li><a href="aboutme.html">ABOUT ME</a></li>
+                <li><a href="project.html">PROJECT</a></li>
+                <li><a href="contact us.html">CONTACT US</a></li>
+            </ul>
+        </nav>
+
+        <marquee>PROJECTS</marquee>
+
+        <!-- Project 1 -->
+        <div class="projects">
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 1</h3>
+                    <p class="main">Student Dropout Analysis</p>
+                    <p>This project analyzes the problem of students dropping out from schools.</p>
+                </div>
+                <div class="button-container">
+                    <a href="hackthon.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 2</h3>
+                    <p class="main">Instagram Clone</p>
+                    <p>I design a Instagram clone to practice my self. It is very fun to design but I really enjoyed a
+                        lot.</p>
+                </div>
+                <div class="button-container">
+                    <a href="instagram.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 3</h3>
+                    <p class="main">Google Assistant Clone</p>
+                    <p>I design a Google Assistant clone to practice my self.If i need help i ask my Assistant.</p>
+                </div>
+                <div class="button-container">
+                    <a href="Assistant.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 4 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 4</h3>
+                    <p class="main">Youtube clone</p>
+                    <p>I design a Youtube clone to practice my self. It is very fun to design but I really enjoyed a lot
+                        to listen songs.</p>
+                </div>
+                <div class="button-container">
+                    <a href="youtube.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 5 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 5</h3>
+                    <p class="main">Linkedin clone</p>
+                    <p>I design a Linkedin clone to practice my self.It will help me to find job.</p>
+                </div>
+                <div class="button-container">
+                    <a href="linkedin.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 6 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 6</h3>
+                    <p class="main">Camera Location App</p>
+                    <p>I design a Camera Location App.It is very hard to design but i learned many things by using PHP
+                        to run in background.</p>
+                </div>
+                <div class="button-container">
+                    <a href="cameraapp3.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 7 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 7</h3>
+                    <p class="main">Calculator</p>
+                    <p>This is fully work on JAVASCRIPT.You can add,sub,multiple etc.. the values.</p>
+                </div>
+                <div class="button-container">
+                    <a href="calculator.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 8 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 8</h3>
+                    <p class="main">Your Project Description</p>
+                    <p>Additional details about your project.</p>
+                </div>
+                <div class="button-container">
+                    <a href="project3.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 9 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 9</h3>
+                    <p class="main">Your Project Description</p>
+                    <p>Additional details about your project.</p>
+                </div>
+                <div class="button-container">
+                    <a href="project3.html">View project</a>
+                </div>
+            </div>
+            <!-- Project 10 -->
+            <div class="project-box">
+                <div class="project-content">
+                    <h3>Project 10</h3>
+                    <p class="main">Your Project Description</p>
+                    <p>Additional details about your project.</p>
+                </div>
+                <div class="button-container">
+                    <a href="project3.html">View project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>&copy; 2024 Raja Gokulakrishnan. All rights reserved.</p></footer>
+
+</body>
+
+</html>
