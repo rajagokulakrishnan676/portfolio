@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dropout Analysis</title>
+  <!-- Link to Bootstrap CSS -->
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    /* Custom styles for the Student Dropout Analysis website */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: whitesmoke;
+      color: #333;
+      background-attachment: fixed;
+      
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #3498db;
+      color: #fff;
+      border-bottom: 4px solid #ff5733;
+    }
+    /* student dropout analysis*/
+    .navbar-brand {
+      font-size: 23px;
+      font-weight: bold;
+      position: relative;
+      left:30px;
+    }
+
+    /*pseudoelements for student dropout analysis*/
+    .navbar-brand::first-letter{
+        font-size: 37px;
+    }
+     
+    .navbar-nav .nav-item {
+      margin-right: 20px;
+    }
+
+    .navbar-nav .nav-link {
+      color: #fff;
+      font-size: 25px;
+    }
+
+    /* Features Section */
+    .col-md-4 {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .col-md-4 h2 {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .col-md-4 p {
+      font-size: 18px;
+    }
+
+    /* Footer */
+    .footer1 {
+  text-align: center;
+  background-color: #333;
+  padding: 10px;
+  color: #fff;
+}
+
+.footer1 p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.footer1 h3 {
+  font-size: 24px;
+  margin: 10px 0;
+  font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.footer1 h3 span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer1 h3 span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.footer1 h3 span:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.footer1 h3 span:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.footer1 h3 span:nth-child(4) {
+  animation-delay: 0.9s;
+}
+
+.footer1 h3 span:nth-child(5) {
+  animation-delay: 1s;
+}
+
+.footer1 h3 span:nth-child(6) {
+  animation-delay: 2s;
+}
+    /* Hover effect for buttons */
+    .btn:hover {
+      background-color: #ff5733;
+      border-color: #ff5733;
+    }
+
+    /* Animation */
+    .animated {
+      animation-duration: 9s;
+    }
+
+    /* Font Awesome Icons */
+    .icon {
+      font-size: 40px;
+      color: #3498db;
+    }
+    
+    /* Additional CSS Styles */
+    .custom-heading {
+      color: #ff5733;
+      font-size: 36px;
+    }
+
+    /*Log-in Style*/
+    .nav-link{
+        font-size:50px;
+        font-weight: bold;
+        position: relative;
+        top:30px;
+        
+    }
+
+
+    /* Animations */
+    .smoke-effect {
+      background-color: #000;
+      background-image: url('smoke-effect.png');
+      animation: smoke 3s infinite;
+    }
+
+    .bouncing-words {
+      animation: bounce 5s infinite;
+    }
+
+    @keyframes smoke {
+      0% {
+        background-image: url('smoke-effect-1.png');
+      }
+      50% {
+        background-image: url('smoke-effect-2.png');
+      }
+      100% {
+        background-image: url('smoke-effect-3.png');
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    /*logo*/
+    .logo{
+      border: 2px solid black;
+      width: 105px;
+      height: 115px;
+      border-radius: 30%;
+    }
+
+    /*slide message*/
+    .slide{
+      background-color: whitesmoke;
+      color:rgb(199, 73, 98);
+      font-size: 25px;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+      text-shadow: 2px 1px blueviolet;
+    }
+    
+    /*Names in Footer*/
+    #authors{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /*Style for class wise student dropout*/
+    .classSelect1{
+      font-weight: bold;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 28px;
+
+    }
+
+    .fullgraph{
+      min-height:15px;
+      min-width: 20px;
+      text-align: center;
+    }
+
+    /*AP Government*/
+    .ap-government{
+      font-size: 35px;
+      color:#ff5733;
+      text-shadow: 2px 1px red;
+      position:relative;
+      left: 280px;
+      bottom: 50px;
+    }
+
+
+</style>
+</head>
+<body>
+
+<!-- Navbar Section -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="logo"></div>
+  <a class="navbar-brand" href="#">Student Dropout Analysis <br> SIH-2023 <span class="ap-government">Central Government of India</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Log-in</Log-in> <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!--welcome message-->
+<div class="slide">
+  <p> <marquee> Welcome To Smart India Hackthon (2k23)</marquee> </p>
+</div>
+
+<!--Graph Chart Section-->
+<div class="fullgraph">
+    <label class="classSelect1">Select Class:</label>
+    <select id="classSelect">
+        <option value="0"></option>
+        <option value="1">Class 1</option>
+        <option value="2">Class 2</option>
+        <option value="3">Class 3</option>
+        <option value="4">Class 4</option>
+        <option value="5">Class 5</option>
+    </select>
+  </div>
+  <div>
+    <canvas id="dropoutChart" width="100" height="30"></canvas>
+  </div>
+  
+  <!-- Features Section -->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-4 animated fadeInLeft">
+        <h2>Total Number Of Schools</h2>
+        <i class="icon fa fa-line-chart"></i>
+        <p>1.Government Schools <br> 2.Private schools</p>
+        <canvas id="schoolChart" width="400" height="200"></canvas>
+      </div>
+      <div class="col-md-4 animated fadeInUp">
+        <h2>Students Gender</h2>
+        <i class="icon fa fa-desktop"></i>
+        <p>1.Male <br> 2.Female</p>
+        <canvas id="genderChecking" width="400" height="200"></canvas>
+      </div>
+      <div class="col-md-4 animated fadeInRight">
+        <h2>Yearly Student Dropout</h2>
+        <i class="icon fa fa-lightbulb-o"></i><br><br>
+      <select id="year">
+      <option value=""></option>
+      <option value="2023">2023</option>
+      <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+      <option value="2016">2016</option>
+      <option value="2015">2015</option>
+      <option value="2014">2014</option>
+      <option value="2013">2013</option>
+      <option value="2012">2012</option>
+      </select>
+      <canvas id="myChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+<!-- Footer Section -->
+<footer class="footer1">
+  <p id="nochange">All Right Reserved:2021 AI/DS Batch...</p>
+  <h3 id="authors">
+    <span>Charan |</span>
+    <span>Vamsi |</span>
+    <span>Jeetheshwar |</span>
+    <span>Vasanthi |</span>
+    <span>Dhanush |</span>
+    <span>Gokul</span>
+  </h3>
+</footer>
+<!-- Link to Bootstrap JS and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+
+<!--script for Number of School to represent in graphical representation-->
+ <script>
+ // Data for the chart
+ var data = {
+    labels: ['Government Schools', 'Private Schools'],
+    datasets: [{
+      data: [15000, 10000], // Add the data's for private and government school
+      backgroundColor: ['#007BFF', '#FFC107'], //This for to modify the colors
+    }]
+  };
+
+  // Get the canvas element
+  var ctx = document.getElementById('schoolChart').getContext('2d');
+
+  // Create a bar chart
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Number of Schools'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'School Type'
+          }
+        }
+      }
+    }
+  }); 
+  </script>
+
+  <!--Script for Gender Checking-->
+ <script>
+// Data for the chart
+  var data = {
+    labels: ['Male', 'Female'],
+    datasets: [{
+      data: [150, 100], // Add the data's for Male and female
+      backgroundColor: ['#FF8C00', '#FFC0CB'], //This for to modify the colors
+    }]
+  };
+
+  // Get the canvas element
+  var ctx = document.getElementById('genderChecking').getContext('2d');
+
+  // Create a bar chart
+  var chart = new Chart(ctx, {
+    type: 'bar',
+    data: data,
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true,
+          title: {
+            display: true,
+            text: 'Number Of Students'
+          }
+        },
+        x: {
+          title: {
+            display: true,
+            text: 'Gender'
+          }
+        }
+      }
+    }
+  }); 
+</script>
+
+<!--script for year wise students dropout-->
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+		var myChart = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+				datasets: [{
+					label: 'Yearly Students Dropout',
+					data: [5, 6, 77, 5, 22, 3, 7, 8, 19, 8,6, 5],  //Here Add the values yearly droping rate
+					backgroundColor: '#C24641',
+					borderColor: '#808080',
+					borderWidth: 1
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+
+		document.getElementById('year').addEventListener('change', function() {
+			var year = this.value;
+			myChart.data.datasets[0].data = [getRandomInt(1, 20), getRandomInt(1, 40), getRandomInt(1, 60), getRandomInt(1, 80), getRandomInt(1, 100), getRandomInt(1, 120), getRandomInt(1, 140), getRandomInt(1, 160), getRandomInt(1, 180), getRandomInt(1, 200), getRandomInt(1, 220), getRandomInt(1, 240)];
+			myChart.update();
+		});
+
+		function getRandomInt(min, max) {
+			return Math.floor(Math.random() * (max - min + 1)) + min;
+		}
+	</script>
+
+  <!--Script For class Wise Students Droping Out From school-->
+  <script>
+    // Sample data for class-wise yearly student dropouts (you can replace this with your data)
+    const classData = {
+        0: [ ],
+        1: [5, 10, 15, 12, 8, 1, 2, 3, 4], //years wise we can add the datas here.
+        2: [7, 8, 10, 7, 5, 6, 7, 8, 9],    // it starts from the starting of the year.
+        3: [10, 15, 20, 18, 12, 15, 12, 13, 15],
+        4: [8, 12, 10, 9, 7,, 18, 19, 20, 11],
+        5: [6, 10, 12, 11, 9, 5, 9, 19, 20],
+    };
+
+    const classSelect = document.getElementById("classSelect");
+    const dropoutChart = new Chart(document.getElementById("dropoutChart"), {
+        type: 'line',
+        data: {
+            labels: ['2023', '2022', '2021', '2020', '2019','2018','2017','2016','2015'],  //Here we can add a number of years
+            datasets: [{
+                label: 'Class-wise Dropout',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                data: classData[classSelect.value],
+            }],
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        },
+    });
+
+    classSelect.addEventListener("change", () => {
+        const selectedClass = classSelect.value;
+        dropoutChart.data.datasets[0].data = classData[selectedClass];
+        dropoutChart.update();
+    });
+</script>
+</body>
+</html>
