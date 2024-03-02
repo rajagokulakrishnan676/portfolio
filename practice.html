@@ -6,7 +6,7 @@
     <title>Login</title>
     <style>
         body{
-            background-color: rgba(0, 0, 0, 0.658);
+            background-color: rgba(229, 227, 227, 0.151);
             font-family: sans-serif;
             display: flex;
             justify-content: center;
@@ -14,7 +14,7 @@
         }
 
         .container{
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.414);
             width: 300px;
             min-height: 200px;
             border-radius: 10px;
@@ -33,16 +33,15 @@
 
         input{
             width: 90%;
-            border-radius: 5px;
+            border-radius: 7px;
             border: 1px solid;
             padding: 8px;
             margin-left: 5px;
             margin-bottom: 7px;
-            color: red;
             border-width: 3px;
         }
 
-        button{
+        .btn{
             margin-left: 110px;
             margin-top: 15px;
             margin-bottom: 5px;
@@ -52,28 +51,50 @@
             border: 1px solid;
             font-weight: bold;
             border-width: 3px;
+            border-radius: 7px;
         }
 
         h2{
+            
             text-align: center;
             font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            text-shadow: 0px 0px 2px rgb(145, 4, 4);
         }
 
         button:hover{
             color: white;
             background-color: black;
         }
+
+        .signbtn{
+            padding: 5px;
+           margin-left: 28px;
+            width: 80%;
+            margin-bottom: 5px;
+            background-color: black;
+            color: whitesmoke;
+            border-radius: 7px;
+        }
+
+        .signbtn:hover{
+            color: black;
+            font-weight: bold;
+            background-color: white;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Login</h2>
+        <h2>Login Form</h2>
         <div class="form">
-            <label>Name</label>
+            <label>First Name</label>
             <input type="text" placeholder="Enter a name or Email" id="name">
+            <label>Last name</label>
+            <input type="text" placeholder="Enter a last name">
             <label>Password</label>
             <input type="password" placeholder="Password" id="password">
-            <button onclick="msg()">Submit</button>
+            <button onclick="msg()" class="btn">Submit</button>
+            <button class="signbtn">Sign-in with Google</button>
             
         </div>
     </div>
