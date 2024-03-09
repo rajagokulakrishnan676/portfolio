@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="field1">
+    <input id="field2">
+    <button onclick="toChange()">Press</button>
+    <p id="result">Result</p>
+
+<script>
+    let callingField1 = document.getElementById("field1");
+    let callingField2 = document.getElementById("field2");
+    let finalResult = document.getElementById("result");
+
+    function toChange(){
+        
+    let newField1 = callingField1.value;
+    let newField2 = callingField2.value;
+    let totalValue = Number(callingField1.value) + Number(callingField2.value);
+    console.log(totalValue);
+    finalResult.innerHTML = "result:" + totalValue;
+
+    }
+</script>
+
+</body>
+</html>
