@@ -1,114 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <style>
-        body{
-            background-color: rgba(229, 227, 227, 0.151);
-            font-family: sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .container{
-            background-color: rgba(255, 255, 255, 0.414);
-            width: 300px;
-            min-height: 200px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 50px black;
-            margin-top: 50px;
-            
-        }
-
-        label{
-            display: block;
-            margin-left: 10px;
-            font-size: 16px;
-            font-weight: bolder;
-            margin-bottom: 7px;
-        }
-
-        input{
-            width: 90%;
-            border-radius: 7px;
-            border: 1px solid;
-            padding: 8px;
-            margin-left: 5px;
-            margin-bottom: 7px;
-            border-width: 3px;
-        }
-
-        .btn{
-            margin-left: 110px;
-            margin-top: 15px;
-            margin-bottom: 5px;
-            padding: 5px;
-            color: black;
-            background-color: white;
-            border: 1px solid;
-            font-weight: bold;
-            border-width: 3px;
-            border-radius: 7px;
-        }
-
-        h2{
-            
-            text-align: center;
-            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-            text-shadow: 0px 0px 2px rgb(145, 4, 4);
-        }
-
-        button:hover{
-            color: white;
-            background-color: black;
-        }
-
-        .signbtn{
-            padding: 5px;
-           margin-left: 28px;
-            width: 80%;
-            margin-bottom: 5px;
-            background-color: black;
-            color: whitesmoke;
-            border-radius: 7px;
-        }
-
-        .signbtn:hover{
-            color: black;
-            font-weight: bold;
-            background-color: white;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bubble Popper</title>
+<style>
+    *{
+        margin: 0%;
+        padding: 0%;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #f0f0f0;
+    }
+    
+    #game-container {
+        position: relative;
+    }
+    
+    .bubble {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #4CAF50;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    #score {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #333;
+    }
+</style>
 </head>
 <body>
-    <div class="container">
-        <h2>Login Form</h2>
-        <div class="form">
-            <label>First Name</label>
-            <input type="text" placeholder="Enter a name or Email" id="name">
-            <label>Last name</label>
-            <input type="text" placeholder="Enter a last name">
-            <label>Password</label>
-            <input type="password" placeholder="Password" id="password">
-            <button onclick="msg()" class="btn">Submit</button>
-            <button class="signbtn">Sign-in with Google</button>
-            
-        </div>
-    </div>
-    <script>
-        let name = document.getElementById('name');
-        let password = document.getElementById('password');
-        let error = document.getElementById('error');
-        function msg(){
-            if(name.value==="" || password.value===""){
-               alert('please fill the field')
-            }else{
 
-            }
-        }
-    </script>
+<div id="game-container">
+    <div id="score">Score: 0</div>
+</div>
+
+<script>
+    const gameContainer = document.getElementById('game-container');
+    const scoreDisplay = document.getElementById('score');
+    let score = 0;
+
+    function createBubble() {
+        const bubble = document.createElement('div');
+        bubble.className = 'bubble';
+        const size = Math.floor(Math.random() * 50) + 20;
+        const x = Math.random() * (window.innerWidth - size);
+        const y = Math.random() * (window.innerHeight - size);
+        bubble.style.width = size + 'px';
+        bubble.style.height = size + 'px';
+        bubble.style.left = x + 'px';
+        bubble.style.top = y + 'px';
+        bubble.addEventListener('click', popBubble);
+        gameContainer.appendChild(bubble);
+    }
+
+    function popBubble() {
+        score++;
+        scoreDisplay.textContent = 'Score: ' + score;
+        this.remove();
+        createBubble();
+    }
+
+    function startGame() {
+        setInterval(createBubble, 1000);
+    }
+
+    startGame();
+</script>
+
 </body>
 </html>
