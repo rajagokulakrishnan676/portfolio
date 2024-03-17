@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black
+        }
+
+        .conatiner{
+            background-color: white;
+            width: 300px;
+            min-height: 200px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 30px whitesmoke;
+        }
+
+        h2{
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            color: burlywood;
+            margin-top: 5px;
+            font-size: 28px;
+        }
+
+        input{
+            margin-left: 7px;
+            margin-top: 13px;
+            padding: 6px;
+            width: 70%;
+           padding-top: 7px;
+           border-radius: 10px;
+           border: none;
+           border: 2px solid black;
+        }
+
+        .btn{
+            padding: 5px;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+            border-radius: 5px;
+            border: none;
+            border: 1px solid black;
+            font-size: 18px;
+            padding-left: 12px;
+            padding-right: 12px;
+        }
+
+        .btn:hover{
+            background-color: black;
+            color: white;
+            font-weight: bold;
+        }
+
+        #listitems{
+            color: black;
+            margin-left: 30px;
+            margin-top: 5px;
+            font-size: 18px;
+        }
+
+        #delbtn{
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="conatiner">
+        <h2>To-Do List</h2>
+        <input id="todofield" type="text" placeholder="List The value">
+        <button onclick="addthevalues()" class="btn">Add</button>
+        <ul id="listitems">
+            <li>
+                Raja Gokulakrishnan <button onclick="deletethevalue(event)" id="delbtn">Delete</button>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        let todofield = document.getElementById("todofield");
+        let listitems = document.getElementById("listitems");
+        let delbtn = document.getElementById("delbtn");
+
+        function addthevalues(){
+            let collectingvalue = todofield.value;
+            let creatinglist = document.createElement("li");
+            creatinglist.innerHTML = collectingvalue + '<button onclick="deletethevalue(event)" id="delbtn">Delete</button>';
+            listitems.append(creatinglist)
+       }
+
+       function deletethevalue(event){
+        event.target.parentElement.remove();
+       }
+    </script>
+</body>
+</html>
