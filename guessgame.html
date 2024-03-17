@@ -5,73 +5,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number</title>
     <style>
-        *{
-            margin: 0%;
-            padding: 0%;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body{
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgba(0, 0, 0, 0.743);
+            height: 100vh;
+            background-color: #282c34;
+            font-family: Arial, sans-serif;
         }
-        .container{
-            background-color: whitesmoke;
-            min-width: 300px;
-            min-height: 250px;
-            margin-top: 130px;
-            border-radius: 15px;
-            box-shadow: 0px 0px 15px whitesmoke;
-        }
-        input{
-            display: block;
-            margin-left: 9px;
-            margin-top: 30px;
-            padding: 5px;
-            width: 90%;
-            box-shadow: 0px 0px 10px slateblue;
-            border: 1px solid white;
+        .container {
+            background-color: #ffffff;
+            width: 300px;
+            padding: 20px;
             border-radius: 10px;
-        }
-        h1{
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Added box shadow */
             text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 30px;
-            margin-top: 15px;
+            animation: fadeIn 0.5s ease;
         }
-        button{
-            margin-top: 30px;
-            margin-left: 130px;
-            padding: 3px;
-            font-weight: bold;
-            box-shadow: 0px 0px 10px red;
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
             border-radius: 5px;
+            font-size: 16px;
+            outline: none;
         }
-        button:hover{
-            color: white;
-            background-color: black;
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
-        #result{
-            text-align: center;
-            margin-top: 30px;
-            font-weight: bold;
-            font-size: 18px;
-            font-family: 'Times New Roman', Times, serif;
+        button:hover {
+            background-color: #0056b3;
         }
-        #score{
-            margin-top: 10px;
-            text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            font-size: 20px;
-            font-weight: bold;
+        p {
+            margin-top: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Guess The Number from <br> 1 to 10</h1>
-        <input id="field" placeholder="Guess The Number">
-        <button onclick="checkthenumber()">Check</button>
+        <h1>Guess The Number from 1 to 10</h1>
+        <input id="field" type="number" placeholder="Enter your guess">
+        <button onclick="checkTheNumber()">Check</button>
         <p id="result">Result: Let's see if you are right or wrong.</p>
         <p id="score">Score: 10</p>
     </div>
@@ -82,19 +87,21 @@
         let score = 10; 
         let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-        function checkthenumber(){
-            let guess = parseInt(field.value);
-            if(isNaN(guess)) {
-                result.innerHTML = "Please enter a valid number!";
+        function checkTheNumber() {
+            let guess = field.value;
+            if (guess === "") {
+                result.textContent = "Please enter a valid number between 1 and 10.";
                 return;
             }
             
-            if(guess === randomNumber){
-                result.innerHTML = "Congratulations! You are right.";
+            if (guess === randomNumber) {
+                result.textContent = "Congratulations! You guessed it right.";
                 score++;
             } else {
-                result.innerHTML = "Sorry, you are wrong. Try again.";
+                result.textContent = "Sorry, you guessed it wrong. Try again.";
                 score--;
+            }if(score === 0){
+                alert("Press refresh button to restart the game! or Press ok button to Continue the Game!")
             }
             scoreDisplay.textContent = "Score: " + score;
         }
