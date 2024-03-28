@@ -1,84 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bubble Popper</title>
-<style>
-    *{
-        margin: 0%;
-        padding: 0%;
-    }
-    body {
-        font-family: Arial, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        background-color: #f0f0f0;
-    }
-    
-    #game-container {
-        position: relative;
-    }
-    
-    .bubble {
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #4CAF50;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-    
-    #score {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 24px;
-        color: #333;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
 <body>
-
-<div id="game-container">
-    <div id="score">Score: 0</div>
-</div>
-
+    <input type="text" id="inputfield">
+    <button onclick="add()">check</button>
+    <div class="old">
+        <h2>hello <button onclick="delete(event)">delete</button></h2>
+    </div>
 <script>
-    const gameContainer = document.getElementById('game-container');
-    const scoreDisplay = document.getElementById('score');
-    let score = 0;
-
-    function createBubble() {
-        const bubble = document.createElement('div');
-        bubble.className = 'bubble';
-        const size = Math.floor(Math.random() * 50) + 20;
-        const x = Math.random() * (window.innerWidth - size);
-        const y = Math.random() * (window.innerHeight - size);
-        bubble.style.width = size + 'px';
-        bubble.style.height = size + 'px';
-        bubble.style.left = x + 'px';
-        bubble.style.top = y + 'px';
-        bubble.addEventListener('click', popBubble);
-        gameContainer.appendChild(bubble);
+    let inputfield = document.getElementById("inputfield");
+    let div = document.querySelector("div");
+    let old = document.querySelector(".old");
+    function add(){
+        collectvalue = inputfield.value;
+        let tag = document.createElement("h2");
+        tag.innerHTML = `${collectvalue} ${<button onclick="delete(event)">delete</button>}`;
+        old.append(tag);
     }
 
-    function popBubble() {
-        score++;
-        scoreDisplay.textContent = 'Score: ' + score;
-        this.remove();
-        createBubble();
+    function delete(event) {
+        event.target.parentElement.remove();
     }
-
-    function startGame() {
-        setInterval(createBubble, 1000);
-    }
-
-    startGame();
 </script>
-
 </body>
 </html>
