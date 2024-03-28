@@ -1,0 +1,27 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .container{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border: 0px solid;
+     width: 200px;
+     height: 200px;
+     border-radius: 100px;
+     background-color: rgba(0, 0, 255, 0.688);
+ }
+
+ h2{
+     font-size: 150px;
+     font-weight: bold;
+     position: relative;
+     color: whitesmoke;
+ }
+
+ h1{
+     font-family: 'Courier New', Courier, monospace;
+     font-weight: bold;
+ }

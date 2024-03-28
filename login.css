@@ -1,0 +1,82 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: grey; 
+    background-image: url('../PORTFOLIO/loginbc.jpg');
+    background-repeat: no-repeat;
+    background-size: 1300px;
+  }
+  
+  #login-container {
+    background: linear-gradient(to bottom right, #3547ad, #4399b3);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.616); 
+    animation: fadeIn 1s ease-out;
+    max-width: 400px; 
+  }
+  
+  h2 {
+    text-align: center;
+    color: #0b0a0a; 
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px; 
+    background-color: #4caf50;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  #showPassword {
+    margin-right: 3px; 
+  }
+  
+  
+  #showPasswordLabel {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
