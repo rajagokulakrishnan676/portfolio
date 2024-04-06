@@ -1,7 +1,13 @@
 let inputfield = document.getElementById("inputfield");
-let content = document.getElementById("content");
 
-function speak(){
-    let txttospeak = new SpeechSynthesisUtterance(inputfield.value);
-    window.speechSynthesis.speak(txttospeak);
+
+function speak() {
+    let textToSpeak = inputfield.value.trim();
+    if (textToSpeak !== '') {
+        let utterance = new SpeechSynthesisUtterance(textToSpeak);
+        // utterance.voice = speechSynthesis.getVoices().find(voice => voice.name === 'Your Preferred Voice');
+        window.speechSynthesis.speak(utterance);
+    } else {
+        alert("Please enter some text to speak.");
+    }
 }
