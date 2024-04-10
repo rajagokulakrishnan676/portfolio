@@ -1,3 +1,8 @@
+function addTask(){
+    if(taskValue == " "){
+        console.log("please add some notes");
+    }
+}
 function addTask() {
     let todoField = document.getElementById("todoField");
     let taskValue = todoField.value.trim();
@@ -14,3 +19,4 @@ function addTask() {
 function deleteTask(button) {
     button.parentElement.remove();
 }
+

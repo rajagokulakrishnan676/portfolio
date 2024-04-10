@@ -1,4 +1,5 @@
 let inputfield = document.getElementById("inputfield");
+alert("For better voice clarity please use earphones")
 
 
 function speak() {
