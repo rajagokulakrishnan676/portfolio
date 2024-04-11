@@ -1,3 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raja Gokulakrishnan - Portfolio</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+<body>
+  <div id="login-container">
+    <h2>Sign in</h2>
+    <form id="login-form" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" placeholder="Enter your name" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Your database connection details
@@ -33,3 +50,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 }
 ?>
+</body>
+</html>
