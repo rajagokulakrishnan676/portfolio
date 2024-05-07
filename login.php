@@ -19,8 +19,8 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Your database connection details
     $servername = "localhost";
-    $username = "gokulakrishnan"; 
-    $password = "raja676gokulakrishnan"; 
+    $username = "root"; 
+    $password = ""; 
     $dbname = "portfolio_db";
 
     // Create connection

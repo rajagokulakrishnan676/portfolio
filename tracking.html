@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile Location</title>
+  </head>
+  <body>
+    <h1>Enter Mobile Number</h1>
+    <form id="location-form">
+      <label for="mobile-number">Mobile Number:</label>
+      <input type="text" id="mobile-number" name="mobile-number" required>
+      <button type="submit">Get Location</button>
+    </form>
+    <div id="location-result"></div>
+    <script src="location.js"></script>
+    <script>
+        document.getElementById('location-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Get mobile number from input field
+  const mobileNumber = document.getElementById('mobile-number').value;
+
+  // Send request to web server to get location data
+  fetch('location-data.php?mobile_number=' + mobileNumber)
+    .then(response => response.json())
+    .then(data => {
+      // Display location data
+      const locationResult = document.getElementById('location-result');
+      locationResult.textContent = 'Latitude: ' + data.latitude + ', Longitude: ' + data.longitude;
+    })
+    .catch(error => {
+      // Handle error
+      const locationResult = document.getElementById('location-result');
+      locationResult.textContent = 'Error: ' + error.message;
+    });
+});
+    </script>
+  </body>
+</html>
