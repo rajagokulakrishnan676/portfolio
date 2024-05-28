@@ -54,7 +54,6 @@ if (mysqli_connect_errno()) {
       <input type="submit" name="submit" value="Submit">
     </form>
   </div>
-
+  <script src="login.js"></script>
 </body>
-
 </html>
